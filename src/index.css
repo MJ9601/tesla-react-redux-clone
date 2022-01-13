@@ -8,12 +8,17 @@ html {
   font-size: 62.5%;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .app {
   position: relative;
+  height: 100vh;
+  overflow-y: auto;
+}
+.app.deactive {
+  overflow-y: hidden;
 }
 
 @keyframes LinearMovingRapiedly {

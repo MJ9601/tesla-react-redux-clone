@@ -1,28 +1,44 @@
 import { IconButton } from "@mui/material";
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { activedHomeSlider } from "../features/displaySlice";
+import { selectUser } from "../features/userSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const buttonMaker = (title, action) => (
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  const currentUrl = useLocation();
+  const [navbarProduct, setNavbarProduct] = useState(false);
+  useEffect(() => {
+    setNavbarProduct(currentUrl.pathname.split("/").length > 1 ? true : false);
+  }, [currentUrl]);
+
+  const buttonMaker = (title) => (
     <IconButton
       sx={{
         borderRadius: "1rem",
         mx: ".3rem",
         fontWeight: "600",
-        color: "rgba(0, 0, 0, .7)",
+        color: navbarProduct ? "#eee" : "rgba(0, 0, 0, .7)",
         px: "1.3rem",
       }}
-      onClick={action && (() => dispatch(activedHomeSlider()))}
+      onClick={() => handleClick(title)}
     >
       {title}
     </IconButton>
   );
+
+  const handleClick = (title) => {
+    title === "Menu" && dispatch(activedHomeSlider());
+    title === "Account" && navigate(`/${!user ? "signIn" : "account"}`);
+    title === "Shop" && navigate(`/${title}`);
+  };
   return (
     <Nav>
-      <LogoImg src="images/logo.svg" />
+      <LogoImg src="images/logo.svg" navbarProduct={navbarProduct} />
       <ModelButton>
         {buttonMaker("Model S")}
         {buttonMaker("Model 3")}
@@ -36,7 +52,7 @@ const Navbar = () => {
           {buttonMaker("Shop")}
           {buttonMaker("Account")}
         </ModelButton>
-        {buttonMaker("Menu", true)}
+        {buttonMaker("Menu")}
       </Wrapper>
     </Nav>
   );
@@ -59,6 +75,7 @@ const Nav = styled.div`
 const LogoImg = styled.img`
   width: 10rem;
   object-fit: contain;
+  color: ${(props) => (props.navbarProduct ? "#eee" : "#000")};
 `;
 const ModelButton = styled.div`
   display: flex;

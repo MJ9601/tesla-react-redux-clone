@@ -1,16 +1,25 @@
 import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import {
   deActivedHomeSlider,
   selectHomeSlider,
 } from "../features/displaySlice";
+import { sidebarItems } from "../List";
+import SidebarOptions from "./SidebarOptions";
 
 const SidebarSlicer = () => {
   const sideActive = useSelector(selectHomeSlider);
   const dispatch = useDispatch();
+  const [sidebarOptionList, setSidebarOptionList] = useState([]);
+  useEffect(() => {
+    window.innerWidth <= 1200
+      ? setSidebarOptionList([...sidebarItems])
+      : setSidebarOptionList(sidebarItems.slice(6));
+  }, [sideActive]);
+
   return (
     <Sidebar active={sideActive}>
       <Container>
@@ -20,6 +29,11 @@ const SidebarSlicer = () => {
         >
           <Close sx={{ fontSize: "3rem" }} />
         </IconButton>
+        <OptionWrapper>
+          {sidebarOptionList.map((option, index) => (
+            <SidebarOptions key={index} title={option} />
+          ))}
+        </OptionWrapper>
       </Container>
     </Sidebar>
   );
@@ -46,4 +60,11 @@ const Container = styled.div`
   background-color: #fff;
   padding: 2rem 1rem;
   height: 100vh;
+`;
+const OptionWrapper = styled.div`
+  width: 93%;
+  height: 94%;
+  overflow-y: auto;
+  margin-top: 2rem;
+  margin-left: 2rem;
 `;

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
 import { SectionHome } from "./Section";
 import SidebarSlicer from "./SidebarSlicer";
+import { useSelector } from "react-redux";
+import { selectHomeSlider } from "../features/displaySlice";
 
 const Home = () => {
   return (
