@@ -1,7 +1,7 @@
 import { KeyboardArrowDown, Speed } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
-import { MainButton } from "./Buttons";
+import { MainButton } from "../Buttons";
 
 const ProductBanner = () => {
   return (
@@ -86,6 +86,9 @@ const DetailWrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 75%;
+  @media (max-width: 640px) {
+    width: 96%;
+  }
 `;
 const Htag = styled.h3`
   font-size: 3.6rem;

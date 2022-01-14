@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MainButton, SecondaryButton } from "./Buttons";
+import { MainButton, SecondaryButton } from "../../Buttons";
 
 const ProductPresentSectionBody = ({
   hasOneButton,
@@ -48,7 +48,8 @@ const WrapperText = styled.div`
   height: ${(props) => props.wrapHeight};
   @media (max-width: 1400px) {
     width: 100%;
-    height: 35vh;
+    height: fit-content;
+    justify-content: start;
   }
 `;
 const ContainerLeft = styled.div`
@@ -65,8 +66,9 @@ const ContainerLeft = styled.div`
     font-size: 1.6rem;
     color: rgba(0, 0, 0, 0.6);
     width: 50%;
-    min-width: 30rem;
+    min-width: 35rem;
     line-height: 2.6rem;
+
     @media (max-width: 850px) {
       width: 100%;
     }
@@ -85,19 +87,19 @@ const HeadTag = styled.h1`
   font-weight: 500;
   letter-spacing: 0.25rem;
   font-size: 3.4rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.4rem;
 `;
 const HeaderWrapper = styled.div`
   width: ${(props) => (props.isVertical ? "100%" : "50%")};
   text-align: ${(props) => (props.isVertical ? "start" : "center")};
   min-width: 30rem;
   @media (max-width: 1400px) {
-    width: 100%;
+    width: 50%;
     text-align: center;
   }
 `;
 const ButtonWrapper = styled.div`
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
