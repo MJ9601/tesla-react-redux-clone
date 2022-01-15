@@ -1,32 +1,30 @@
 import { KeyboardArrowDown, Speed } from "@mui/icons-material";
 import React from "react";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { selectArrengmentOfDisplayPage } from "../../features/displaySlice";
 import { MainButton } from "../Buttons";
 
-const ProductBanner = () => {
+const ProductBanner = ({ data }) => {
+  const infos = data.data;
+  const currentUrl = useLocation();
+  const productName = currentUrl.pathname.split("/")[2].replace("%20", " ");
+  // console.log(infos);
   return (
-    <Wrapper>
-      <HeadLine>Model 3</HeadLine>
+    <Wrapper src={data.src}>
+      <HeadLine>{productName}</HeadLine>
       <InnerWrapper>
         <Container>
           <DetailWrapper>
-            <Wrap>
-              <Htag>
-                <Speed sx={{ fontSize: "4rem", mr: "1rem" }} />
-                3.1 s
-              </Htag>
-              <Ptag>0-60 mph*</Ptag>
-            </Wrap>
-            <Wrap>
-              <Htag>358 mi</Htag>
-              <Ptag>Range (EPA est.)</Ptag>
-            </Wrap>
-            <Wrap>
-              <Htag>AWD</Htag>
-              <Ptag>Dual Motor</Ptag>
-            </Wrap>
+            {Object.keys(infos).map((info, index) => (
+              <Wrap key={index}>
+                <Htag>{infos[info]}</Htag>
+                <Ptag>{info}</Ptag>
+              </Wrap>
+            ))}
           </DetailWrapper>
-          <MainButton title="order now" onBanner={true} width={"50%"} />
+          <MainButton title="order now" onBanner width={"50%"} />
         </Container>
         <KeyboardArrowDown
           sx={{
@@ -45,7 +43,7 @@ export default ProductBanner;
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/d0cecbbf-1a20-4b48-b136-fb096af19515/bvlatuR/std/2880x1800/model-3-main-hero-a-desktop");
+  background-image: url("${(props) => props.src}");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

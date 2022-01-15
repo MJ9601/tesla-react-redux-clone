@@ -1,52 +1,47 @@
 import React from "react";
 import styled from "styled-components";
 
-const ProductPresentSectionHeader = ({
-  imgSrc,
-  isHorizental,
-  isLeft,
-  wrapHeight,
-  wrapWidth,
-  hasVideo,
-}) => {
+const ProductPresentSectionHeader = ({ data }) => {
+  const hasVideo = data.hasVideo;
+  const isHorizental = data.isHorizental;
+  const isLeft = data.isLeft;
+  const src = data.src;
+  const wrapHeight = data.wrapHeight;
+  const wrapWidth = data.wrapWidth;
   return (
-    <HeadWrapper wrapHeight={wrapHeight} wrapWidth={wrapWidth}>
-      {!hasVideo ? (
-        <Image src="https://tesla-cdn.thron.com/delivery/public/image/tesla/02b9fe62-2569-4fc8-bfa1-a8f8cdd9d48e/bvlatuR/std/1440x900/lhd-awd-hero-desktop" />
-      ) : (
-        <>
-          <Video
-            src="https://tesla-cdn.thron.com/static/A7I6LP_lane_change_0.mp4-2000_PYSUF4.mp4"
-            loop
-            muted
-            controls
-            autoPlay
-          />
-        </>
-      )}
-      <VideoCover>
-        <ImgDetailWrapper isHorizental={isHorizental} isLeft={isLeft}>
-          <DetailWrapper>
-            <Htag>2</Htag>
-            <Ptag>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Ptag>
-          </DetailWrapper>
-          <DetailWrapper>
-            <Htag>10 ms</Htag>
-            <Ptag>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Ptag>
-          </DetailWrapper>
-          <DetailWrapper>
-            <Htag>2</Htag>
-            <Ptag>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Ptag>
-          </DetailWrapper>
-        </ImgDetailWrapper>
-      </VideoCover>
-    </HeadWrapper>
+    <>
+      <HeadWrapper wrapHeight={wrapHeight} wrapWidth={wrapWidth}>
+        {!hasVideo ? (
+          <Image src={src} />
+        ) : (
+          <>
+            <Video src={src} loop muted controls autoPlay />
+          </>
+        )}
+        <VideoCover>
+          <ImgDetailWrapper isHorizental={isHorizental} isLeft={isLeft}>
+            <DetailWrapper>
+              <Htag>2</Htag>
+              <Ptag>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </Ptag>
+            </DetailWrapper>
+            <DetailWrapper>
+              <Htag>10 ms</Htag>
+              <Ptag>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </Ptag>
+            </DetailWrapper>
+            <DetailWrapper>
+              <Htag>2</Htag>
+              <Ptag>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </Ptag>
+            </DetailWrapper>
+          </ImgDetailWrapper>
+        </VideoCover>
+      </HeadWrapper>
+    </>
   );
 };
 

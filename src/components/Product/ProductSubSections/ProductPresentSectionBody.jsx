@@ -2,38 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import { MainButton, SecondaryButton } from "../../Buttons";
 
-const ProductPresentSectionBody = ({
-  hasOneButton,
-  wrapHeight,
-  wrapWidth,
-  hasImg,
-  isVertical,
-  imgSrc,
-}) => {
+const ProductPresentSectionBody = ({ data }) => {
+  const hasOneButton = data.hasOneButton;
+  const hasImg = data.hasImg;
+  const isVertical = data.isVertical;
+  const src = data.src;
+  const wrapHeight = data.wrapHeight;
+  const wrapWidth = data.wrapWidth;
   return (
-    <WrapperText wrapHeight={wrapHeight} wrapWidth={wrapWidth}>
-      <ContainerLeft isVertical={isVertical}>
-        <HeaderWrapper isVertical={isVertical}>
-          <TextHtag>All-Wheel Drive</TextHtag>
-          <HeadTag>Duel Motor</HeadTag>
-        </HeaderWrapper>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Necessitatibus ipsum mollitia exercitationem libero natus at
-          consequatur saepe? Aliquid nemo cupiditate perspiciatis temporibus
-          ipsam. Ipsum ducimus obcaecati delectus autem placeat voluptatum.
-        </p>
-        {hasImg ? (
-          <ImageTag src="https://tesla-cdn.thron.com/delivery/public/image/tesla/31a606f1-7ae2-456e-8588-f5a779759336/bvlatuR/std/0x0/model-3-range-map" />
-        ) : (
-          <></>
-        )}
-      </ContainerLeft>
-      <ButtonWrapper>
-        <SecondaryButton title="Learn more" width={"20rem"} />
-        <MainButton title="order now" width={"20rem"} />
-      </ButtonWrapper>
-    </WrapperText>
+    <>
+      <WrapperText wrapHeight={wrapHeight} wrapWidth={wrapWidth}>
+        <ContainerLeft isVertical={isVertical}>
+          <HeaderWrapper isVertical={isVertical}>
+            <TextHtag>All-Wheel Drive</TextHtag>
+            <HeadTag>Duel Motor</HeadTag>
+          </HeaderWrapper>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Necessitatibus ipsum mollitia exercitationem libero natus at
+            consequatur saepe? Aliquid nemo cupiditate perspiciatis temporibus
+            ipsam. Ipsum ducimus obcaecati delectus autem placeat voluptatum.
+          </p>
+          {hasImg ? <ImageTag src={src} /> : <></>}
+        </ContainerLeft>
+        <ButtonWrapper>
+          {!hasOneButton && (
+            <SecondaryButton title="Learn more" width={"20rem"} />
+          )}
+          <MainButton title="order now" width={"20rem"} />
+        </ButtonWrapper>
+      </WrapperText>
+    </>
   );
 };
 
@@ -46,6 +45,7 @@ const WrapperText = styled.div`
   justify-content: space-around;
   width: ${(props) => props.wrapWidth};
   height: ${(props) => props.wrapHeight};
+  display: ${(props) => props.wrapHeight == "0" && "none"};
   @media (max-width: 1400px) {
     width: 100%;
     height: fit-content;

@@ -1,8 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import {
+  selectController,
+  updateOneControllerStatus,
+} from "../../features/displaySlice";
 import ProductController from "./ProductSubSections/ProductController";
 
-const ProductSliderSection = () => {
+const ProductSliderSection = ({ data }) => {
+  // console.log(data);
+  const controllerName = data.controllerName;
+  const controllers = useSelector(selectController);
+  const control = controllers[controllerName];
+  console.log(controllers);
+  const [src, setSrc] = useState("");
+  useEffect(() => {
+    setSrc(control.filter((ctrl) => ctrl.isActive)[0].src);
+  }, [control]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const controllerStatus = Array(control.length).fill(false);
+      for (const iterator of control) {
+        if (iterator.isActive) {
+          let index = control.indexOf(iterator);
+          if (index < control.length - 1) {
+            controllerStatus[index + 1] = true;
+            break;
+          } else {
+            controllerStatus[0] = true;
+            break;
+          }
+        }
+      }
+
+      const updatedControllerArray = controllerStatus.map(
+        (_status, _index) => ({
+          isActive: _status,
+          src: control[_index].src,
+        })
+      );
+      const updatedController = {};
+      updatedController[controllerName] = updatedControllerArray;
+      dispatch(updateOneControllerStatus(updatedController));
+    }, 13000);
+    return () => clearInterval(interval);
+  }, [controllers]);
+
+  const dispatch = useDispatch();
+
   return (
     <Wrap>
       <Container>
@@ -13,18 +59,17 @@ const ProductSliderSection = () => {
           maxime adipisci.
         </p>
         <DisplayWrapper>
-          <Video
-            muted
-            autoPlay
-            src="https://tesla-cdn.thron.com/static/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4?xseo="
-          />
+          <Video muted loop autoPlay src={src} />
           <Cover></Cover>
         </DisplayWrapper>
         <ControllerWrapper>
-          <ProductController />
-          <ProductController />
-          <ProductController isActive={false} />
-          <ProductController />
+          {control.map((ctrl, index) => (
+            <ProductController
+              key={index}
+              index={index}
+              controllerName={controllerName}
+            />
+          ))}
         </ControllerWrapper>
       </Container>
     </Wrap>
@@ -35,7 +80,8 @@ export default ProductSliderSection;
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   @media (max-width: 640px) {
     height: fit-content;
   }
@@ -79,5 +125,6 @@ const ControllerWrapper = styled.div`
   justify-content: center;
   @media (max-width: 700px) {
     flex-wrap: wrap;
+    height: fit-content;
   }
 `;

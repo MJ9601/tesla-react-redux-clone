@@ -11,7 +11,7 @@ const ProductFlexSection = ({ isLeft, imgSrc }) => {
           impedit suscipit ea explicabo numquam nisi vero?
         </p>
       </TextWrapper>
-      <Image src="https://tesla-cdn.thron.com/delivery/public/image/tesla/a9b54155-913f-4a82-b696-89b176c95ca1/bvlatuR/std/1040x584/MX-Exterior-Grid-B-Desktop" />
+      <Image src={imgSrc} />
     </Wrap>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { MainButton } from "../Buttons";
 import ProductFeature from "./ProductSubSections/ProductFeature";
 
-const ProductDetailsSection = ({ hasBlackBg }) => {
+const ProductDetailsSection = ({ hasBlackBg, imgSrc }) => {
   const [productDetails, setProductDetails] = useState([]);
   const handleClick = (model) => {
     setProductDetails(model);

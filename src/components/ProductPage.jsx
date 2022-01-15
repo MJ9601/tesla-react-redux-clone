@@ -1,5 +1,10 @@
-import React from "react";
+import React, { Component, useEffect } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import {
+  selectArrengmentOfDisplayPage,
+  selectSiteConfig,
+} from "../features/displaySlice";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import ProductBanner from "./Product/ProductBanner";
@@ -10,16 +15,28 @@ import ProductSliderSection from "./Product/ProductSliderSection";
 import SidebarSlicer from "./SidebarSlicer";
 
 const ProductPage = () => {
+  const pageConfig = useSelector(selectArrengmentOfDisplayPage);
+  // const siteConfig = useSelector(selectSiteConfig);
+
+  const _alias = {
+    ProductBanner: ProductBanner,
+    ProductDetailsSection: ProductDetailsSection,
+    ProductOrderSection: ProductOrderSection,
+    ProductSliderSection: ProductSliderSection,
+    ProductPresentSection: ProductPresentSection,
+  };
+
+  useEffect(() => {
+    console.log(pageConfig);
+  }, []);
   return (
     <Wrapper>
       <Navbar />
       <SidebarSlicer />
-      <ProductBanner />
-      <ProductPresentSection type={"type-1"} isflex={false} />
-      <ProductPresentSection type={"type-2"} hasBlackBg={true} />
-      <ProductSliderSection />
-      <ProductDetailsSection hasBlackBg={true} />
-      <ProductOrderSection />
+      {pageConfig.map((component, index) => {
+        const TagName = _alias[Object.keys(component)[0]];
+        return <TagName key={index} data={Object.values(component)[0]} />;
+      })}
       <Footer />
     </Wrapper>
   );

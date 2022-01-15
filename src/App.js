@@ -2,18 +2,37 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import ProductPage from "./components/ProductPage";
 import "./index.css";
-import { useSelector } from "react-redux";
-import { selectHomeSlider } from "./features/displaySlice";
-import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectController,
+  selectHomeSlider,
+  setController,
+  setSiteConfig,
+} from "./features/displaySlice";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
-import { selectUser } from "./features/userSlice";
 
 function App() {
   const activeSidebarHome = useSelector(selectHomeSlider);
   const [deactived, setDeactived] = useState(false);
+  const dispatch = useDispatch();
+  const controllers = useSelector(selectController);
+
+  useLayoutEffect(() => {
+    const getData = async () => {
+      const res = await fetch("controllers.json");
+      const ControllerData = await res.json();
+      dispatch(setController(ControllerData));
+      const resp = await fetch("pagesConfig.json");
+      const pageConfig = await resp.json();
+      dispatch(setSiteConfig(pageConfig));
+    };
+    getData();
+  }, []);
   useEffect(() => {
     setDeactived(activeSidebarHome ? true : false);
+    console.log(controllers);
   }, [activeSidebarHome]);
 
   return (
@@ -28,7 +47,7 @@ function App() {
           }
         />
         <Route
-          path={"/model3"}
+          path={"/product/:id"}
           element={
             <>
               <ProductPage />

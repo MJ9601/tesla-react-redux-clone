@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { MainButton } from "../Buttons";
 
-const ProductOrderSection = ({ hasBlackBg }) => {
+const ProductOrderSection = ({ hasBlackBg, imgSrc }) => {
   return (
     <Wrap hasBlackBg={hasBlackBg}>
       <ContainerLeft>
@@ -13,7 +13,7 @@ const ProductOrderSection = ({ hasBlackBg }) => {
         </ButtonWrapper>
       </ContainerLeft>
       <ContainerRight>
-        <Image src="https://tesla-cdn.thron.com/delivery/public/image/tesla/f63a4f07-09f2-486b-b92f-bafdbcd2e4d3/bvlatuR/std/1660x920/MX-Order-Hero-Desktop" />
+        <Image src={imgSrc} />
       </ContainerRight>
     </Wrap>
   );

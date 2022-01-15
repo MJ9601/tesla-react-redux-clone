@@ -3,8 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { activedHomeSlider } from "../features/displaySlice";
+import {
+  activedHomeSlider,
+  setArrengmentOfDisplayPage,
+} from "../features/displaySlice";
 import { selectUser } from "../features/userSlice";
+import { selectSiteConfig } from "../features/displaySlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -12,8 +16,10 @@ const Navbar = () => {
   const user = useSelector(selectUser);
   const currentUrl = useLocation();
   const [navbarProduct, setNavbarProduct] = useState(false);
+
+  const siteConfig = useSelector(selectSiteConfig);
   useEffect(() => {
-    setNavbarProduct(currentUrl.pathname.split("/").length > 1 ? true : false);
+    setNavbarProduct(currentUrl.pathname.split("/").length > 2 ? true : false);
   }, [currentUrl]);
 
   const buttonMaker = (title) => (
@@ -35,6 +41,13 @@ const Navbar = () => {
     title === "Menu" && dispatch(activedHomeSlider());
     title === "Account" && navigate(`/${!user ? "signIn" : "account"}`);
     title === "Shop" && navigate(`/${title}`);
+    // console.log(siteConfig);
+    if (Object.keys(siteConfig).includes(title)) {
+      dispatch(
+        setArrengmentOfDisplayPage(siteConfig[`${title}`].pageArrengement)
+      );
+      navigate(`product/${title}`);
+    }
   };
   return (
     <Nav>

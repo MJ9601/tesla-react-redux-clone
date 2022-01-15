@@ -1,17 +1,44 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import {
+  selectController,
+  updateOneControllerStatus,
+} from "../../../features/displaySlice";
 
-const ProductController = ({ isActive }) => {
+const ProductController = ({ index, controllerName }) => {
+  const controllers = useSelector(selectController);
+  const control = controllers[controllerName];
+
+  const dispatch = useDispatch();
   const [active, setActive] = useState(false);
   useEffect(() => {
-    setActive(isActive ? true : false);
-  }, [isActive]);
+    setActive(control[index].isActive);
+  }, [control]);
+
+  const handleClick = () => {
+    const controllerStatus = Array(control.length).fill(false);
+
+    controllerStatus[index] = true;
+    const updatedControllerArray = controllerStatus.map((_status, _index) => ({
+      isActive: _status,
+      src: control[_index].src,
+    }));
+    const updatedController = {};
+    updatedController[controllerName] = updatedControllerArray;
+    // console.log(updatedController);
+    dispatch(updateOneControllerStatus(updatedController));
+  };
+
   return (
-    <Wrap onClick={() => setActive(true)} active={active}>
-      <HeadLine>San Jose to Los Angeles</HeadLine>
-      <DetailTag>
-        <span>340</span> miles
-      </DetailTag>
+    <Wrap onClick={handleClick} active={active}>
+      <Container>
+        <HeadLine>San Jose to Los Angeles</HeadLine>
+        <DetailTag>
+          <span>340</span> miles
+        </DetailTag>
+      </Container>
     </Wrap>
   );
 };
@@ -22,14 +49,20 @@ const Wrap = styled.div`
   border: ${(props) => (props.active ? ".3rem solid #000" : "none")};
   border-top: ${(props) =>
     props.active ? ".3rem solid #000" : ".3rem solid #888"};
+  width: fit-content;
+  height: fit-content;
+  transition: all 0.3s ease;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+`;
+const Container = styled.div`
   padding: 2rem 0.8rem;
-  width: 20rem;
-  height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  transition: all 0.3s ease;
+  width: 20rem;
+  height: 20rem;
 `;
 const HeadLine = styled.h1`
   font-weight: 400;

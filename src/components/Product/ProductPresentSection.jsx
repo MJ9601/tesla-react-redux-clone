@@ -4,44 +4,54 @@ import ProductPresentSectionHeader from "./ProductSubSections/ProductPresentSect
 import ProductPresentSectionBody from "./ProductSubSections/ProductPresentSectionBody";
 import ProductFlexSection from "./ProductSubSections/ProductFlexSection";
 
-const ProductPresentSection = ({ type, isflex, hasBlackBg }) => {
+const ProductPresentSection = ({ data }) => {
+  // console.log(data.components);
+  const isflex = data.isflex;
+  const hasBlackBg = data.hasBlackBg;
+  const type = data.type;
+  const typeOneComponents = data.components.filter(
+    (component) => Object.keys(component)[0] !== "ProductFlexSection"
+  );
+  const typeTwoComponents = data.components.filter(
+    (component) => Object.keys(component)[0] === "ProductFlexSection"
+  );
+  const _alias = {
+    ProductFlexSection: ProductFlexSection,
+    ProductPresentSectionBody: ProductPresentSectionBody,
+    ProductPresentSectionHeader: ProductPresentSectionHeader,
+  };
   return (
-    <SectionWrapper isflex={isflex} hasBlackBg={hasBlackBg}>
-      {type === "type-1" && (
-        <>
-          <ProductPresentSectionHeader
-            isHorizental={false}
-            isLeft={false}
-            wrapHeight={"75vh"}
-            wrapWidth={"100%"}
-            hasVideo={true}
-          />
-          <ProductPresentSectionBody
-            hasImg={false}
-            isVertical={false}
-            wrapHeight={"25vh"}
-            wrapWidth={"100%"}
-          />
-        </>
-      )}
-      {type === "type-2" && (
-        <Wrap>
-          <ProductFlexSection isLeft={true} />
-          <ProductFlexSection isLeft={false} />
-          <ProductFlexSection isLeft={true} />
-        </Wrap>
-      )}
-    </SectionWrapper>
+    <>
+      <SectionWrapper isflex={isflex} hasBlackBg={hasBlackBg}>
+        {type === "type-1" && (
+          <>
+            {typeOneComponents.map((component, index) => {
+              const TagName = _alias[Object.keys(component)[0]];
+              return <TagName key={index} data={Object.values(component)[0]} />;
+            })}
+          </>
+        )}
+        {type === "type-2" && (
+          <Wrap>
+            {typeTwoComponents.map((component, index) => {
+              const TagName = _alias[Object.keys(component)[0]];
+              return <TagName key={index} data={Object.values(component)[0]} />;
+            })}
+          </Wrap>
+        )}
+      </SectionWrapper>
+    </>
   );
 };
 
 export default ProductPresentSection;
 const SectionWrapper = styled.div`
+  height: fit-content;
   min-height: 100vh;
   width: 100%;
   background-color: ${(props) => (props.hasBlackBg ? "#000" : "#fff")};
-  display: ${(props) => (props.isflex ? "flex" : "block")} @media
-    (max-width: 1400px) {
+  display: ${(props) => (props.isflex ? "flex" : "block")};
+  @media (max-width: 1400px) {
     display: block;
   }
   @media (max-width: 640px) {
@@ -49,7 +59,8 @@ const SectionWrapper = styled.div`
   }
 `;
 const Wrap = styled.div`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -61,7 +72,7 @@ const Wrap = styled.div`
   }
   @media (max-width: 640px) {
     width: 95%;
-    
+
     height: fit-content;
     padding: 3rem 0;
   }
