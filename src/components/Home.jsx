@@ -1,16 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
 import { SectionHome } from "./Section";
 import SidebarSlicer from "./SidebarSlicer";
 import { useSelector } from "react-redux";
-import { selectHomeSlider } from "../features/displaySlice";
+import {
+  selectHomeSlider,
+  selectLandingPageArrengment,
+  selectSiteConfig,
+  setLandingPage,
+} from "../features/displaySlice";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
+  const landingPageConfig = useSelector(selectLandingPageArrengment);
+  console.log(landingPageConfig);
+  useEffect(() => {}, [landingPageConfig]);
   return (
     <>
       <Wrapper>
         <SidebarSlicer />
+        {/* {Object.keys(landingPageConfig).map((product, index) => (
+          <SectionHome
+            model={product}
+            bgImg={landingPageConfig[product].src}
+            isCar={landingPageConfig[product].isCar}
+            key={index}
+          />
+        ))} */}
         <SectionHome model={"Model 3"} bgImg={"model-3.jpg"} isCar />
         <SectionHome model={"Model Y"} bgImg={"model-y.jpg"} isCar />
         <SectionHome model={"Model S"} bgImg={"model-s.jpg"} isCar />

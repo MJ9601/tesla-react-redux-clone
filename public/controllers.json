@@ -3,78 +3,126 @@
     {
       "isActive": true,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/118a3cee-9850-437d-b9e8-e88695d58906/bvlatuR/std/2442x1124/MS-Interior-Carousel-C-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": false
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8dfd0c9e-45d5-4782-a071-c597c372429f/bvlatuR/std/2442x1124/MS-Interior-Carousel-D-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": false
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/82d678c3-1d60-4827-887b-eb44bbac528f/bvlatuR/std/2442x1124/MS-Interior-Carousel-A-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": false
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/bb2fe12c-36d1-4e56-957c-cd6c1b8a8f40/bvlatuR/std/2442x1124/MS-Interior-Carousel-B-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": false
     }
   ],
   "controller_two": [
     {
       "isActive": true,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3da49427-d22a-4fe1-bc36-3653dc426dfd/bvlatuR/std/1920x900/Model-S-Performance-Tri-Motor-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/209dce99-0353-49b1-b0ac-c3aa6de68b71/bvlatuR/std/1920x900/Model-S-Performance-Dual-Motor-Desktop",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     }
   ],
   "controller_three": [
     {
       "isActive": true,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3980356f-4a1f-4c64-9c70-9ec900770844/bvlatuR/std/0x0/map_florida_bg@2x",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/703dd498-e313-45b6-96ad-9533ca0f7782/bvlatuR/std/0x0/map_newyork_bg_mobilep",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/0c46b04f-1368-4e43-8765-ca846734367e/bvlatuR/std/0x0/map_berkeley_bg@2x",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8ff9904f-2c9a-4d65-bdf3-10064c8de7a3/bvlatuR/std/0x0/map_san_jose_bg@2x",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     }
   ],
   "controller_four": [
     {
       "isActive": true,
       "src": "https://tesla-cdn.thron.com/static/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4?xseo=",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/static/A7I6LP_lane_change_0.mp4-2000_PYSUF4.mp4p",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/static/ZZNM9S_summon_1.mp4-2000_OQKCDY.mp4?xseo=",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     },
     {
       "isActive": false,
       "src": "https://tesla-cdn.thron.com/static/WM5XUG_parking.mp4-2000_EQUBJE.mp4?xseo=",
-      "components": { "h1": "", "p": "" }
+      "components": { "h1": "", "p": "" },
+      "hasText": true
+    }
+  ],
+  "controller_five": [
+    {
+      "isActive": true,
+      "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/9e4a894d-e1ea-4c66-99f5-9881f3482ddc/bvlatuR/std/1920x1080/Model-Y-Utility-Desktop-NA-KR",
+      "components": { "h1": "", "p": "" },
+      "hasText": true
+    },
+    {
+      "isActive": false,
+      "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/93b81b8b-7c57-4065-9568-3755ce6c32d8/bvlatuR/std/1920x1080/_1D-Utility-B",
+      "components": { "h1": "", "p": "" },
+      "hasText": true
+    }
+  ],
+  "controller_six": [
+    {
+      "isActive": true,
+      "src": "https://www.tesla.com/sites/default/files/solarroof/v3/installation/Carousel_Design.mp4",
+      "components": { "h1": "", "p": "" },
+      "hasText": true
+    },
+    {
+      "isActive": false,
+      "src": "https://www.tesla.com/sites/default/files/solarroof/v3/installation/Carousel_Installation2.mp4",
+      "components": { "h1": "", "p": "" },
+      "hasText": true
+    },
+    {
+      "isActive": false,
+      "src": "https://tesla-cdn.thron.com/static/WLCRZE_Carousel_PowerOn_V4_IDHKAS.mp4?xseo=",
+      "components": { "h1": "", "p": "" },
+      "hasText": true
     }
   ]
 }

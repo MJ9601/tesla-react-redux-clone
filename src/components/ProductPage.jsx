@@ -27,7 +27,7 @@ const ProductPage = () => {
   };
 
   useEffect(() => {
-    console.log(pageConfig);
+    // console.log(pageConfig);
   }, []);
   return (
     <Wrapper>

@@ -61,6 +61,7 @@ const SectionWrapper = styled.div`
 const Wrap = styled.div`
   height: fit-content;
   min-height: 100vh;
+  padding: 5rem 0;
   width: 50%;
   display: flex;
   flex-direction: column;

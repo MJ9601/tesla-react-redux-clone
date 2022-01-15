@@ -1,14 +1,28 @@
 import { IconButton } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import {
+  selectSiteConfig,
+  setArrengmentOfDisplayPage,
+} from "../features/displaySlice";
 import { selectUser } from "../features/userSlice";
 
 const SidebarOptions = ({ title }) => {
+  const dispatch = useDispatch();
+  const siteConfig = useSelector(selectSiteConfig);
   const user = useSelector(selectUser);
   const navigate = useNavigate();
   const handleClick = (title) => {
-    title === "Account" && navigate(`/${!user ? "signIn" : "account"}`);
+    title === "Account" && navigate(`../${!user ? "signIn" : "account"}`);
+    title === "Shop" && navigate(`../${title}`);
+    if (Object.keys(siteConfig).includes(title)) {
+      dispatch(
+        setArrengmentOfDisplayPage(siteConfig[`${title}`].pageArrengement)
+      );
+
+      navigate(`../product/${title}`, { replace: true });
+    }
   };
   return (
     <IconButton

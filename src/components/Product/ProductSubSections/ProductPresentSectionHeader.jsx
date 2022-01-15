@@ -8,6 +8,7 @@ const ProductPresentSectionHeader = ({ data }) => {
   const src = data.src;
   const wrapHeight = data.wrapHeight;
   const wrapWidth = data.wrapWidth;
+  const isContain = data.isContain;
   return (
     <>
       <HeadWrapper wrapHeight={wrapHeight} wrapWidth={wrapWidth}>
@@ -15,7 +16,14 @@ const ProductPresentSectionHeader = ({ data }) => {
           <Image src={src} />
         ) : (
           <>
-            <Video src={src} loop muted controls autoPlay />
+            <Video
+              src={src}
+              loop
+              muted
+              controls
+              autoPlay
+              isContain={isContain}
+            />
           </>
         )}
         <VideoCover>
@@ -71,7 +79,7 @@ const Video = styled.video`
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: ${(props) => (props.isContain ? "contain" : "cover")};
   z-index: 0;
 `;
 const VideoCover = styled.div`

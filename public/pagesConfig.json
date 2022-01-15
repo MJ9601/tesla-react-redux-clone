@@ -5,7 +5,7 @@
         "ProductBanner": {
           "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/32e5e0f3-5c04-42ef-8f8f-c6b1c26f8a9e/bvlatuR/std/2880x1800/ms-main-hero-desktop",
           "data": {
-            "Range": "396 mi",
+            "Range (EPA est.)": "396 mi",
             "0-60 mph": "1.99 s",
             "Top Speed": "200 mph",
             "Peak Power": "1020 hp "
@@ -20,6 +20,7 @@
           "components": [
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": false,
                 "isLeft": false,
                 "wrapHeight": "100vh",
@@ -43,6 +44,9 @@
       },
       {
         "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": true,
           "controllerName": "controller_one"
         }
       },
@@ -87,6 +91,7 @@
           "components": [
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": false,
                 "isLeft": false,
                 "wrapHeight": "75vh",
@@ -110,6 +115,9 @@
       },
       {
         "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": false,
           "controllerName": "controller_two"
         }
       },
@@ -121,6 +129,7 @@
           "components": [
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": false,
                 "isLeft": false,
                 "wrapHeight": "75vh",
@@ -177,6 +186,7 @@
           "components": [
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": false,
                 "isLeft": false,
                 "wrapHeight": "100vh",
@@ -200,6 +210,9 @@
       },
       {
         "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": false,
           "controllerName": "controller_three"
         }
       },
@@ -221,6 +234,7 @@
             },
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": false,
                 "isLeft": false,
                 "wrapHeight": "100vh",
@@ -240,6 +254,7 @@
           "components": [
             {
               "ProductPresentSectionHeader": {
+                "isContain": true,
                 "isHorizental": true,
                 "isLeft": true,
                 "wrapHeight": "75vh",
@@ -263,6 +278,9 @@
       },
       {
         "ProductSliderSection": {
+          "duration": 10000,
+          "isImg": false,
+          "hasBlackBg": false,
           "controllerName": "controller_four"
         }
       },
@@ -275,10 +293,1198 @@
       {
         "ProductOrderSection": {
           "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/1c9e3fa8-7eba-4d75-bf00-03a3dbdd6d06/bvlatuR/std/1660x920/MS-Order-Hero-Desktop",
-          "hasBlackBg": true
+          "hasBlackBg": false,
+          "hasImage": true
         }
       }
     ],
-    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/e90a341e-f9ca-4aa1-8eab-94afea118786/bvlatuR/std/2880x1800/M3-Homepage-D"
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/e90a341e-f9ca-4aa1-8eab-94afea118786/bvlatuR/std/2880x1800/M3-Homepage-D",
+    "isCar": true
+  },
+  "Model 3": {
+    "pageArrengement": [
+      {
+        "ProductBanner": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/d0cecbbf-1a20-4b48-b136-fb096af19515/bvlatuR/std/2880x1800/model-3-main-hero-a-desktop",
+          "data": {
+            "0-60 mph": "3.1 s",
+            "Range (EPA est.)": "358 mi",
+            "Dual Motor": "AWD"
+          }
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/ea753653-02a2-4206-aac5-82a33a0a245d/bvlatuR/std/2880x1800/model-3-hero-a-desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3489a82e-b19c-457a-86a4-7ea9ac91aa1c/bvlatuR/std/1920x1080/lhd-performance-hero-desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/02b9fe62-2569-4fc8-bfa1-a8f8cdd9d48e/bvlatuR/std/1440x900/lhd-awd-hero-desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/b2b118a7-7e86-4e8f-b7af-092f3e64d847/bvlatuR/std/1254x1080/lhd-range-hero-desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": true,
+                "isVertical": true,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/31a606f1-7ae2-456e-8588-f5a779759336/bvlatuR/std/0x0/model-3-range-map"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": true,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": true,
+                "src": "https://tesla-cdn.thron.com/static/WCL9WK_autopilot.mp4-2000_QQHSUM.mp4?xseo="
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/d4f29128-35ad-4912-9282-32701225c77b/bvlatuR/std/1920x1080/lhd-interior-hero-desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductDetailsSection": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/2b239404-c402-4c55-9a10-a061f2cf0ae8/bvlatuR/std/947x677/global-spec-hero",
+          "hasBlackBg": true
+        }
+      },
+      {
+        "ProductOrderSection": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/457dd9fa-6e32-43b1-a6cf-9b3d76e9e181/bvlatuR/std/2232x720/global-order-hero",
+          "hasBlackBg": true,
+          "hasImage": true
+        }
+      }
+    ],
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/e90a341e-f9ca-4aa1-8eab-94afea118786/bvlatuR/std/2880x1800/M3-Homepage-D",
+    "isCar": true
+  },
+  "Model X": {
+    "pageArrengement": [
+      {
+        "ProductBanner": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/da705069-91b5-41cb-86f3-86a585c6fdf3/bvlatuR/std/2880x1800/MX-Hero-Desktop",
+          "data": {
+            "Range (EPA est.)": "333 mi",
+            "0-60 mph": "2.5 s",
+            "1/4 Mile": "9.9 s",
+            "Peak Power": "1020 hp "
+          }
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": true,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/177c0faf-b852-47ea-a218-394368e15a20/bvlatuR/std/2880x1800/MS-Interior-Hero-Desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "0",
+                "wrapWidth": "0%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": true,
+          "controllerName": "controller_one"
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-2",
+          "isflex": false,
+          "hasBlackBg": true,
+          "components": [
+            {
+              "ProductFlexSection": {
+                "isLeft": true,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/9865e92b-731c-4f1a-9430-e984ee0001ca/bvlatuR/std/1040x584/MS-Interior-Grid-A-Desktop"
+              }
+            },
+            {
+              "ProductFlexSection": {
+                "isLeft": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/08d2e941-2be2-4e1a-bed9-924ac30fb115/bvlatuR/std/1040x584/MS-Interior-Grid-B-Desktop"
+              }
+            },
+            {
+              "ProductFlexSection": {
+                "isLeft": true,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/dcfc40cb-6b46-4be7-b173-be10e0c9143c/bvlatuR/std/1040x584/MS-Interior-Grid-C-Desktop"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/e13368c8-5657-468e-aa16-a28d9dc763c6/bvlatuR/std/2880x1800/MX-Performance-Hero-Desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": false,
+          "controllerName": "controller_two"
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/a3472e33-60ae-44ff-a0b9-43e62cf1ff31/bvlatuR/std/2880x1800/MX-Utility-Hero-Desktop"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/4b516502-71a4-476f-acd4-0e326c785657/bvlatuR/std/2880x1800/MX-Exterior-Hero-Desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductPresentSection": {
+          "type": "type-2",
+          "isflex": false,
+          "hasBlackBg": true,
+          "components": [
+            {
+              "ProductFlexSection": {
+                "isLeft": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/a9b54155-913f-4a82-b696-89b176c95ca1/bvlatuR/std/1040x584/MX-Exterior-Grid-B-Desktop"
+              }
+            },
+            {
+              "ProductFlexSection": {
+                "isLeft": true,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/309b7de6-f67c-4d11-85da-2061f9124859/bvlatuR/std/1040x584/MX-Exterior-Grid-A-Desktop"
+              }
+            },
+            {
+              "ProductFlexSection": {
+                "isLeft": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/e35bae00-d08b-40f1-b978-0b9656dc1a94/bvlatuR/std/1040x584/MX-Exterior-Grid-C-Desktop"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75vw",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/6c49b283-8777-4cdd-8719-bd1dd93b985e/bvlatuR/std/2880x1800/MX-Range-Hero-Desktop"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25vw",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": false,
+          "controllerName": "controller_three"
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/c072655e-fe87-438f-9f5f-54dc587f64fd/bvlatuR/std/1920x1080/MX-Safety-Hero-Desktop"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": true,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": true,
+                "src": "https://tesla-cdn.thron.com/delivery/public/video/tesla/65011bbb-6f1c-422e-9e7a-727ba24bad15/bvlatuR/WEBHD/autopilot"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 10000,
+          "isImg": false,
+          "hasBlackBg": false,
+          "controllerName": "controller_four"
+        }
+      },
+      {
+        "ProductDetailsSection": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3d7892b2-7246-42e5-819a-cc119ede91b7/bvlatuR/std/1440x1080/MX-Specs-Hero-Desktop",
+          "hasBlackBg": true
+        }
+      },
+      {
+        "ProductOrderSection": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/f63a4f07-09f2-486b-b92f-bafdbcd2e4d3/bvlatuR/std/1660x920/MX-Order-Hero-Desktop",
+          "hasBlackBg": false,
+          "hasImage": true
+        }
+      }
+    ],
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/325743a2-d187-4e28-91a3-5a2e47e317f7/bvlatuR/std/2880x1800/ModelX-Homepage-D",
+    "isCar": true
+  },
+  "Model Y": {
+    "pageArrengement": [
+      {
+        "ProductBanner": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/0cf18940-c0bf-45f7-b2d8-46c3bc693c65/bvlatuR/std/0x0/model-y_R1@2",
+          "data": {
+            "Cargo space": "76 cu ft",
+            "Range (EPA est.)": "330 mi",
+            "Dual Motor": "AWD"
+          }
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://www.tesla.com/themes/custom/tesla_frontend/components/images/safety-model-y-hero.png"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 4000,
+          "isImg": true,
+          "hasBlackBg": true,
+          "controllerName": "controller_five"
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/48b20b9d-9322-4cf9-b079-44797fc32600/bvlatuR/std/0x0/AWD_hero@2"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": true,
+                "src": "https://tesla-cdn.thron.com/static/WVNSU3_Range_Desktop.mp4-2000_WJLESL.mp4?xseo="
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": true,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": true,
+                "src": "https://tesla-cdn.thron.com/static/WCL9WK_autopilot.mp4-2000_QQHSUM.mp4?xseo="
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8288d520-cd1a-468d-89eb-e73cfde99355/bvlatuR/std/2880x1800/Model-Y-Interior-Hero-Desktop-NA-KR"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductDetailsSection": {
+          "src": "https://www.tesla.com/sites/default/files/drupal8/modely/ModelYSilhouette.png",
+          "hasBlackBg": true
+        }
+      },
+      {
+        "ProductOrderSection": {
+          "src": "https://www.tesla.com/sites/default/files/drupal8/modely/ModelY_Order_Hero.jpg",
+          "hasBlackBg": true,
+          "hasImage": true
+        }
+      }
+    ],
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70",
+    "isCar": true
+  },
+  "Solar Roof": {
+    "pageArrengement": [
+      {
+        "ProductBanner": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/b614dd66-cc50-4cba-8c15-186b95bb4a8d/bvlatuR/std/2880x1800/sr-storm-desktop",
+          "data": {
+            "Beautiful Solar": "76",
+            "Tile Warranty": "25-Year",
+            "Outage Protection": "24/7"
+          }
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/c877126e-0db5-409d-a412-04fc94b59b76/bvlatuR/std/2880x1800/HP-SR-Design-D"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/2d6d1f7e-4462-442a-ba8e-d70dec628948/bvlatuR/std/2880x1800/powerwall-energy-storage-desktop"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": true,
+                "src": "https://www.tesla.com/sites/default/files/solarroof/v3/durability/SR-Durability-Desktop.mp4"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductSliderSection": {
+          "duration": 8000,
+          "isImg": false,
+          "hasBlackBg": true,
+          "controllerName": "controller_six"
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://www.tesla.com/sites/default/files/solarroof/v3/inverter/Inverter_V8_D.jpg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/7218535a-a8b7-4630-b4d5-17edcf5daa1d/bvlatuR/std/2880x1800/SR-tesla-app-D"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/4aedd73e-cd73-4051-9cc7-68955ad4646d/bvlatuR/std/2880x1800/SR-Value-D"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductDetailsSection": {
+          "src": "https://www.tesla.com/sites/default/files/solarroof/specs/PanelMeasure_desktop2x.png",
+          "hasBlackBg": true
+        }
+      },
+      {
+        "ProductOrderSection": {
+          "src": "",
+          "hasBlackBg": true,
+          "hasImage": false
+        }
+      }
+    ],
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/c877126e-0db5-409d-a412-04fc94b59b76/bvlatuR/std/2880x1800/HP-SR-Design-D",
+    "isCar": false
+  },
+  "Solar Panels": {
+    "pageArrengement": [
+      {
+        "ProductBanner": {
+          "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/45992f1c-a33a-4a04-b1f0-338aff182f8e/bvlatuR/std/2880x1800/_25-Hero-D",
+          "data": {
+            "Convert Sunlight": "&",
+            "Guaranteed Lowest Price": "$",
+            "Energy Monitoring": "24/7"
+          }
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": true,
+                "src": "https://tesla-cdn.thron.com/static/YTNWIZ_425_Savings_D-2000_NVNAJS.mp4?xseo="
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/9ddad34a-7766-499d-b99e-65983e68f10a/bvlatuR/std/2090x1800/_25-Design-D"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/173055ff-afe2-4114-947e-ba62cf8e05c6/bvlatuR/std/2880x1800/PW-Inverter-Hero-D"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": true,
+                "src": "https://www.tesla.com/sites/default/files/solarpanels/power-on/solar-assessment-desktop.mp4"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://www.tesla.com/sites/default/files/solarroof/v3/inverter/Inverter_V8_D.jpg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": false,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": false,
+                "isHorizental": false,
+                "isLeft": false,
+                "wrapHeight": "75vh",
+                "wrapWidth": "100%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/7218535a-a8b7-4630-b4d5-17edcf5daa1d/bvlatuR/std/2880x1800/SR-tesla-app-D"
+              }
+            },
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": true,
+                "wrapHeight": "25vh",
+                "wrapWidth": "100%",
+                "hasImg": false,
+                "isVertical": false,
+                "src": ""
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductPresentSection": {
+          "type": "type-1",
+          "isflex": true,
+          "hasBlackBg": false,
+          "components": [
+            {
+              "ProductPresentSectionBody": {
+                "hasOneButton": false,
+                "wrapHeight": "100vh",
+                "wrapWidth": "25%",
+                "hasImg": false,
+                "isVertical": true,
+                "src": ""
+              }
+            },
+            {
+              "ProductPresentSectionHeader": {
+                "isContain": true,
+                "isHorizental": true,
+                "isLeft": true,
+                "wrapHeight": "100vh",
+                "wrapWidth": "75%",
+                "hasVideo": false,
+                "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/4aedd73e-cd73-4051-9cc7-68955ad4646d/bvlatuR/std/2880x1800/SR-Value-D"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "ProductDetailsSection": {
+          "src": "https://www.tesla.com/sites/default/files/solarroof/specs/PanelMeasure_desktop2x.png",
+          "hasBlackBg": true
+        }
+      },
+      {
+        "ProductOrderSection": {
+          "src": "",
+          "hasBlackBg": true,
+          "hasImage": false
+        }
+      }
+    ],
+    "src": "https://tesla-cdn.thron.com/delivery/public/image/tesla/c877126e-0db5-409d-a412-04fc94b59b76/bvlatuR/std/2880x1800/HP-SR-Design-D",
+    "isCar": false
   }
 }

@@ -1,20 +1,32 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { MainButton } from "../Buttons";
 
-const ProductOrderSection = ({ hasBlackBg, imgSrc }) => {
+const ProductOrderSection = ({ data }) => {
+  const hasBlackBg = data.hasBlackBg;
+  const imgSrc = data.src;
+  const hasImage = data.hasImage;
   return (
     <Wrap hasBlackBg={hasBlackBg}>
-      <ContainerLeft>
-        <h1>Model X</h1>
-        <ButtonWrapper>
-          <MainButton title="order now" width={"20rem"} />
-          <MainButton title="compare" width={"20rem"} />
-        </ButtonWrapper>
-      </ContainerLeft>
-      <ContainerRight>
-        <Image src={imgSrc} />
-      </ContainerRight>
+      <Container>
+        <ContainerLeft hasImage={hasImage}>
+          <h1>Model X</h1>
+          <ButtonWrapper hasImage={hasImage}>
+            <MainButton
+              title="order now"
+              width={"20rem"}
+              onBanner={hasBlackBg}
+            />
+            <MainButton title="compare" width={"20rem"} onBanner={hasBlackBg} />
+          </ButtonWrapper>
+        </ContainerLeft>
+        {hasImage && (
+          <ContainerRight hasImage={hasImage}>
+            <Image src={imgSrc} />
+          </ContainerRight>
+        )}
+      </Container>
     </Wrap>
   );
 };
@@ -22,9 +34,13 @@ const ProductOrderSection = ({ hasBlackBg, imgSrc }) => {
 export default ProductOrderSection;
 const Wrap = styled.div`
   height: 100vh;
-  width: 80%;
+  width: 100%;
   background-color: ${(props) => (props.hasBlackBg ? "#000" : "#fff")};
+`;
+const Container = styled.div`
   display: flex;
+  width: 80%;
+  height: 100%;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
@@ -36,7 +52,7 @@ const Wrap = styled.div`
   }
 `;
 const ContainerLeft = styled.div`
-  width: 50%;
+  width: ${(props) => (props.hasImage ? "50%" : "100%")};
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -48,11 +64,13 @@ const ContainerLeft = styled.div`
     width: 100%;
   }
 `;
-const ContainerRight = styled(ContainerLeft)``;
+const ContainerRight = styled(ContainerLeft)`
+  display: ${(props) => !props.hasImage && "none"};
+`;
 const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: ${(props) => (props.hasImage ? "start" : "center")};
   gap: 2rem;
 `;
 const Image = styled.img`

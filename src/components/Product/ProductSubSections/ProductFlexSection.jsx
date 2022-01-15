@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const ProductFlexSection = ({ isLeft, imgSrc }) => {
+const ProductFlexSection = ({ data }) => {
+  const isLeft = data.isLeft;
+  const imgSrc = data.src;
   return (
     <Wrap isLeft={isLeft}>
       <TextWrapper isLeft={isLeft}>

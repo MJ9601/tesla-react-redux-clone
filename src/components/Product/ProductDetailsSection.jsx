@@ -1,37 +1,42 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { MainButton } from "../Buttons";
 import ProductFeature from "./ProductSubSections/ProductFeature";
 
-const ProductDetailsSection = ({ hasBlackBg, imgSrc }) => {
+const ProductDetailsSection = ({ data }) => {
+  const hasBlackBg = data.hasBlackBg;
+  const src = data.src;
   const [productDetails, setProductDetails] = useState([]);
+  const currentUrl = useLocation();
+  const productName = currentUrl.pathname.split("/")[2].replace("%20", " ");
   const handleClick = (model) => {
     setProductDetails(model);
   };
   return (
     <Wrap hasBlackBg={hasBlackBg}>
       <ContainerLeft>
-        <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/3d7892b2-7246-42e5-819a-cc119ede91b7/bvlatuR/std/1440x1080/MX-Specs-Hero-Desktop" />
+        <img src={src} />
       </ContainerLeft>
       <ContainerRight>
         <h1>
-          <span>Model X</span> Spacs
+          <span>{productName}</span> Spacs
         </h1>
         <DetailsWrapper>
           <WrapperLeft>
             <Button
               width={"17rem"}
               onBanner={true}
-              onClick={() => handleClick([1, 2, 3, 4])}
+              onClick={() => handleClick(Array(4).fill(0))}
             >
-              Model X Plaid
+              {productName} Plaid
             </Button>
             <Button
               width={"17rem"}
               onBanner={true}
-              onClick={() => handleClick([1, 2, 3, 4, 5, 6, 7, 8, 9])}
+              onClick={() => handleClick(Array(9).fill(0))}
             >
-              Model X
+              {productName}
             </Button>
           </WrapperLeft>
           <WrapperRight>

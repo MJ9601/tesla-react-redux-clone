@@ -10,9 +10,12 @@ import ProductController from "./ProductSubSections/ProductController";
 const ProductSliderSection = ({ data }) => {
   // console.log(data);
   const controllerName = data.controllerName;
+  const hasBlackBg = data.hasBlackBg;
+  const isImg = data.isImg;
+  const duration = data.duration;
   const controllers = useSelector(selectController);
   const control = controllers[controllerName];
-  console.log(controllers);
+  // console.log(controllers);
   const [src, setSrc] = useState("");
   useEffect(() => {
     setSrc(control.filter((ctrl) => ctrl.isActive)[0].src);
@@ -43,14 +46,14 @@ const ProductSliderSection = ({ data }) => {
       const updatedController = {};
       updatedController[controllerName] = updatedControllerArray;
       dispatch(updateOneControllerStatus(updatedController));
-    }, 13000);
+    }, duration);
     return () => clearInterval(interval);
   }, [controllers]);
 
   const dispatch = useDispatch();
 
   return (
-    <Wrap>
+    <Wrap hasBlackBg={hasBlackBg}>
       <Container>
         <HeadLine>Feedom to Travel</HeadLine>
         <p>
@@ -59,7 +62,11 @@ const ProductSliderSection = ({ data }) => {
           maxime adipisci.
         </p>
         <DisplayWrapper>
-          <Video muted loop autoPlay src={src} />
+          {!isImg ? (
+            <Video muted loop autoPlay src={src} />
+          ) : (
+            <Image src={src} />
+          )}
           <Cover></Cover>
         </DisplayWrapper>
         <ControllerWrapper>
@@ -79,6 +86,7 @@ const ProductSliderSection = ({ data }) => {
 export default ProductSliderSection;
 
 const Wrap = styled.div`
+  backgournd-color: ${(props) => props.hasBlackBg && "#000"};
   width: 100%;
   height: fit-content;
   min-height: 100vh;
@@ -95,6 +103,7 @@ const Container = styled.div`
     margin-top: 1.7rem;
     font-size: 1.7rem;
     line-height: 2.7rem;
+    margin-bottom: 1.5rem;
   }
 `;
 const HeadLine = styled.h1`
@@ -113,16 +122,24 @@ const DisplayWrapper = styled.div`
   width: 100%;
   height: 50vh;
   position: relative;
+  padding-bottom: 1.5rem;
 `;
 const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: contain;
 `;
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
 const ControllerWrapper = styled.div`
   display: flex;
   gap: 2rem;
   justify-content: center;
+  padding-bottom: 1.5rem;
   @media (max-width: 700px) {
     flex-wrap: wrap;
     height: fit-content;

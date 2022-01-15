@@ -6,7 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectController,
   selectHomeSlider,
+  selectLandingPageArrengment,
+  selectSiteConfig,
   setController,
+  setLandingPage,
   setSiteConfig,
 } from "./features/displaySlice";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -17,7 +20,8 @@ function App() {
   const activeSidebarHome = useSelector(selectHomeSlider);
   const [deactived, setDeactived] = useState(false);
   const dispatch = useDispatch();
-  const controllers = useSelector(selectController);
+  const siteConfig = useSelector(selectSiteConfig);
+  const landingPageConfig = useSelector(selectLandingPageArrengment);
 
   useLayoutEffect(() => {
     const getData = async () => {
@@ -31,8 +35,19 @@ function App() {
     getData();
   }, []);
   useEffect(() => {
+    const ProductNames = Object.keys(siteConfig);
+    const landingPageArrengment = {};
+    ProductNames.forEach((product) => {
+      landingPageArrengment[product] = {
+        src: siteConfig[product].src,
+        isCar: siteConfig[product].isCar,
+      };
+    });
+    dispatch(setLandingPage(landingPageArrengment));
+  }, [siteConfig]);
+
+  useEffect(() => {
     setDeactived(activeSidebarHome ? true : false);
-    console.log(controllers);
   }, [activeSidebarHome]);
 
   return (

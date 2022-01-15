@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import logo from "./logo.svg";
 import {
   activedHomeSlider,
   setArrengmentOfDisplayPage,
@@ -39,19 +40,24 @@ const Navbar = () => {
 
   const handleClick = (title) => {
     title === "Menu" && dispatch(activedHomeSlider());
-    title === "Account" && navigate(`/${!user ? "signIn" : "account"}`);
-    title === "Shop" && navigate(`/${title}`);
+    title === "Account" && navigate(`../${!user ? "signIn" : "account"}`);
+    title === "Shop" && navigate(`../${title}`);
     // console.log(siteConfig);
     if (Object.keys(siteConfig).includes(title)) {
       dispatch(
         setArrengmentOfDisplayPage(siteConfig[`${title}`].pageArrengement)
       );
-      navigate(`product/${title}`);
+
+      navigate(`../product/${title}`, { replace: true });
     }
   };
   return (
     <Nav>
-      <LogoImg src="images/logo.svg" navbarProduct={navbarProduct} />
+      <LogoImg
+        src={logo}
+        navbarProduct={navbarProduct}
+        onClick={() => navigate("../")}
+      />
       <ModelButton>
         {buttonMaker("Model S")}
         {buttonMaker("Model 3")}
@@ -88,7 +94,7 @@ const Nav = styled.div`
 const LogoImg = styled.img`
   width: 10rem;
   object-fit: contain;
-  color: ${(props) => (props.navbarProduct ? "#eee" : "#000")};
+  cursor: pointer;
 `;
 const ModelButton = styled.div`
   display: flex;

@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { controllers, pageConfig } from "../setControllerAndPageArrengment";
 
 const initialState = {
   homeSlider: false,
   controllers: {},
   arrengmentOfDisplayPage: [],
   siteConfig: {},
+  landingPageArrengment: {},
   status: "idle",
 };
 
@@ -34,6 +34,9 @@ export const displaySlice = createSlice({
     setSiteConfig: (state, action) => {
       state.siteConfig = action.payload;
     },
+    setLandingPage: (state, action) => {
+      state.landingPageArrengment = action.payload;
+    },
   },
 });
 
@@ -44,11 +47,14 @@ export const {
   updateOneControllerStatus,
   setArrengmentOfDisplayPage,
   setSiteConfig,
+  setLandingPage,
 } = displaySlice.actions;
 
 export const selectHomeSlider = (state) => state.display.homeSlider;
 export const selectController = (state) => state.display.controllers;
 export const selectSiteConfig = (state) => state.display.siteConfig;
+export const selectLandingPageArrengment = (state) =>
+  state.display.landingPageArrengment;
 export const selectArrengmentOfDisplayPage = (state) =>
   state.display.arrengmentOfDisplayPage;
 
