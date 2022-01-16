@@ -13,9 +13,6 @@ import {
 import { useDispatch } from "react-redux";
 
 const Home = () => {
-  const landingPageConfig = useSelector(selectLandingPageArrengment);
-  console.log(landingPageConfig);
-  useEffect(() => {}, [landingPageConfig]);
   return (
     <>
       <Wrapper>

@@ -15,13 +15,16 @@ import {
 import { useEffect, useLayoutEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
+import { selectUser } from "./features/userSlice";
+import Account from "./components/Account/Account";
 
 function App() {
   const activeSidebarHome = useSelector(selectHomeSlider);
   const [deactived, setDeactived] = useState(false);
   const dispatch = useDispatch();
   const siteConfig = useSelector(selectSiteConfig);
-  const landingPageConfig = useSelector(selectLandingPageArrengment);
+
+  const user = useSelector(selectUser);
 
   useLayoutEffect(() => {
     const getData = async () => {
@@ -53,22 +56,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path={"/signIn"}
-          element={
-            <>
-              <Login />
-            </>
-          }
-        />
-        <Route
-          path={"/product/:id"}
-          element={
-            <>
-              <ProductPage />
-            </>
-          }
-        />
+        <Route path={"/signIn"} element={<Login />} />
+        <Route path={"/product/:id"} element={<ProductPage />} />
+        <Route path={"/account"} element={<Account />} />
+
         <Route
           exact
           path={"/"}
