@@ -6,6 +6,7 @@ const initialState = {
   arrengmentOfDisplayPage: [],
   siteConfig: {},
   landingPageArrengment: {},
+  accountFeed: "Dashboard",
   status: "idle",
 };
 
@@ -37,6 +38,9 @@ export const displaySlice = createSlice({
     setLandingPage: (state, action) => {
       state.landingPageArrengment = action.payload;
     },
+    setAccountFeed: (state, action) => {
+      state.accountFeed = action.payload;
+    },
   },
 });
 
@@ -48,11 +52,13 @@ export const {
   setArrengmentOfDisplayPage,
   setSiteConfig,
   setLandingPage,
+  setAccountFeed,
 } = displaySlice.actions;
 
 export const selectHomeSlider = (state) => state.display.homeSlider;
 export const selectController = (state) => state.display.controllers;
 export const selectSiteConfig = (state) => state.display.siteConfig;
+export const selectAccountFeed = (state) => state.display.accountFeed;
 export const selectLandingPageArrengment = (state) =>
   state.display.landingPageArrengment;
 export const selectArrengmentOfDisplayPage = (state) =>

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
-  return <HTag>Tesla &copy; 2022</HTag>;
+  return <HTag>Tesla React Redux 2022</HTag>;
 };
 
 export default Footer;

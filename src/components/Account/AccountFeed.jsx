@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { selectAccountFeed } from "../../features/displaySlice";
 import ProductCard from "./ProductCard";
 
-const AccountFeed = ({ title }) => {
+const AccountFeed = () => {
+  const accountFeed = useSelector(selectAccountFeed);
+  useEffect(() => {}, [accountFeed]);
   return (
     <Wrapper>
       <FeedContainer>
-        <h1>Dashboard</h1>
-        <ContentWrapper>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </ContentWrapper>
+        <h1>{accountFeed}</h1>
+        <ContentWrapper></ContentWrapper>
       </FeedContainer>
     </Wrapper>
   );

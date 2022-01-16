@@ -1,10 +1,24 @@
 import { IconButton } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { setAccountFeed } from "../../features/displaySlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const AccountOptions = ({ Icon, title }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handelClick = async (title) => {
+    title !== "Sign Out" && dispatch(setAccountFeed(title));
+    if (title == "Sign Out") {
+      signOut(auth);
+      navigate("../");
+    }
+  };
   return (
-    <Wrap>
+    <Wrap onClick={() => handelClick(title)}>
       <IconButton className="icon_button">
         <Icon sx={{ fontSize: "3rem" }} />
       </IconButton>

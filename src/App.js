@@ -13,17 +13,24 @@ import {
   setSiteConfig,
 } from "./features/displaySlice";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Login from "./components/Login";
-import { selectUser } from "./features/userSlice";
+import { LOGIN, LOGOUT, selectUser } from "./features/userSlice";
 import Account from "./components/Account/Account";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
 
 function App() {
   const activeSidebarHome = useSelector(selectHomeSlider);
   const [deactived, setDeactived] = useState(false);
   const dispatch = useDispatch();
   const siteConfig = useSelector(selectSiteConfig);
-
   const user = useSelector(selectUser);
 
   useLayoutEffect(() => {
@@ -37,6 +44,15 @@ function App() {
     };
     getData();
   }, []);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (userAuth) =>
+      userAuth
+        ? dispatch(LOGIN({ email: userAuth.email, userId: userAuth.uid }))
+        : dispatch(LOGOUT())
+    );
+  }, []);
+
   useEffect(() => {
     const ProductNames = Object.keys(siteConfig);
     const landingPageArrengment = {};
@@ -58,7 +74,7 @@ function App() {
       <Routes>
         <Route path={"/signIn"} element={<Login />} />
         <Route path={"/product/:id"} element={<ProductPage />} />
-        <Route path={"/account"} element={<Account />} />
+        <Route path={"/account"} element={<>{user && <Account />}</>} />
 
         <Route
           exact

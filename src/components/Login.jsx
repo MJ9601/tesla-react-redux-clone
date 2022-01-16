@@ -1,8 +1,55 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { auth } from "../firebase";
+import { collection } from "firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { LOGIN } from "../features/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isOldUser, setIsOldUser] = useState(true);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const signUpFunc = async (e) => {
+    e.preventDefault();
+    if (password !== "" && email !== "") {
+      try {
+        const newUser = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        dispatch(
+          LOGIN({ email: newUser.user.email, userId: newUser.user.uid })
+        );
+        navigate("../account");
+      } catch (error) {
+        alert(error);
+      }
+    }
+  };
+  const signInFunc = async (e) => {
+    e.preventDefault();
+    try {
+      if (password !== "" && email !== "") {
+        const user = await signInWithEmailAndPassword(auth, email, password);
+        dispatch(LOGIN({ email: user.user.email, userId: user.user.uid }));
+        navigate("../account");
+      }
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
     <Wrapper>
       <Navbar>
@@ -14,10 +61,22 @@ const Login = () => {
           <HeadLine>Sign In</HeadLine>
           <SignFrom>
             <SignLabel>Email Address</SignLabel>
-            <SignInput type="text" />
+            <SignInput
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <SignLabel>Password</SignLabel>
-            <SignInput type="password" />
-            <SignInputButton type="submit" value={"SIGN IN"} />
+            <SignInput
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <SignInputButton
+              type="submit"
+              value={"SIGN IN"}
+              onClick={signInFunc}
+            />
           </SignFrom>
           <div
             style={{
@@ -37,17 +96,35 @@ const Login = () => {
         <FormWrapper>
           <HeadLine>Create Account</HeadLine>
           <SignFrom>
-            <SignLabel>Select Language</SignLabel>
-            <SignInput type="text" />
             <SignLabel>First Name</SignLabel>
-            <SignInput type="text" />
+            <SignInput
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
             <SignLabel>Last Name</SignLabel>
-            <SignInput type="text" />
+            <SignInput
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
             <SignLabel>Email Address</SignLabel>
-            <SignInput type="email" />
+            <SignInput
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <SignLabel>Password</SignLabel>
-            <SignInput type="password" />
-            <SignInputButton type="submit" value={"CREATE ACCOUNT"} />
+            <SignInput
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <SignInputButton
+              type="submit"
+              value={"CREATE ACCOUNT"}
+              onClick={signUpFunc}
+            />
           </SignFrom>
           <Button onClick={() => setIsOldUser(true)}>Sign in</Button>
         </FormWrapper>
