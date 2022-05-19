@@ -46,6 +46,7 @@ const WrapperText = styled.div`
   width: ${(props) => props.wrapWidth};
   height: ${(props) => props.wrapHeight};
   display: ${(props) => props.wrapHeight == "0" && "none"};
+  gap: 2rem;
   @media (max-width: 1400px) {
     width: 100%;
     height: fit-content;
@@ -58,7 +59,6 @@ const ContainerLeft = styled.div`
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
-  padding-left: 3rem;
   @media (max-width: 1400px) {
     flex-direction: row;
   }

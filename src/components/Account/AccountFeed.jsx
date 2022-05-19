@@ -11,7 +11,9 @@ const AccountFeed = () => {
     <Wrapper>
       <FeedContainer>
         <h1>{accountFeed}</h1>
-        <ContentWrapper></ContentWrapper>
+        <ContentWrapper>
+          <ProductCard />
+        </ContentWrapper>
       </FeedContainer>
     </Wrapper>
   );
